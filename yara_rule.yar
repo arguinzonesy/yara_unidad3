@@ -7,6 +7,6 @@ rule grupo_10 : HL-YA-PP
 	strings:
 		$a = "format"
 		$b = "PPR"
-		condition:
+	condition:
 		$a and $b
 }

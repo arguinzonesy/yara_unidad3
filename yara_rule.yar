@@ -1,4 +1,4 @@
-rule grupo_10 : HL-YA-PP
+rule grupo_10 : USACH
 {
 	meta:
 		description = "Diseñada para la prueba!"

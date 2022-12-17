@@ -6,26 +6,26 @@ meta:
   description = "Desarrollada para Evaluación Final"
 
 strings:
-  $eml1="From:"
-  $eml2="To:"
-  $eml3="Subject:"
+  $eml_1="From:"
+  $eml_2="To:"
+  $eml_3="Subject:"
 
-  $hi1="Hola sr/sra" nocase 
-  $hi2="Hello sir/madam" nocase
-  $hi3="Atencion" nocase
-  $hi4="Attention" nocase
-  $hi5="Dear user" nocase
-  $hi6="Account holder" nocase
+  $hi_1="Hola sr/sra" nocase 
+  $hi_2="Hello sir/madam" nocase
+  $hi_3="Atencion" nocase
+  $hi_4="Attention" nocase
+  $hi_5="Dear user" nocase
+  $hi_6="Account holder" nocase
 
-  $key1 = "BTC" nocase
-  $key2 = "Wallet" nocase
-  $key3 = "Bitcoin" nocase
-  $key4 = "hours" nocase
-  $key5 = "payment" nocase
-  $key6 = "malware" nocase
-  $key7 = "bitcoin address" nocase
-  $key8 = "access" nocase
-  $key9 = "virus" nocase
+  $key_1 = "BTC" nocase
+  $key_2 = "Wallet" nocase
+  $key_3 = "Bitcoin" nocase
+  $key_4 = "hours" nocase
+  $key_5 = "payment" nocase
+  $key_6 = "malware" nocase
+  $key_7 = "bitcoin address" nocase
+  $key_8 = "access" nocase
+  $key_9 = "virus" nocase
 
   $url_1="Click" nocase
   $url_2="Confirm" nocase
@@ -43,7 +43,7 @@ strings:
  
 condition:
   all of ($eml*) and
-  any of ($hi*) or 
+  any of ($hi*) and 
   any of ($key*) or 
   any of ($url*) or 
   any of ($lie*)

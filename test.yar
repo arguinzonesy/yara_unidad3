@@ -6,16 +6,16 @@ meta:
   description = "Desarrollada para Evaluación Final"
 
 strings:
-  $eml_1="From:"
-  $eml_2="To:"
-  $eml_3="Subject:"
+  $eml1="From:"
+  $eml2="To:"
+  $eml3="Subject:"
 
-  $saludo_1="Hola sr/sra" nocase 
-  $saludo_2="Hello sir/madam" nocase
-  $saludo_3="Atencion" nocase
-  $saludo_4="Attention" nocase
-  $saludo_5="Dear user" nocase
-  $saludo_6="Account holder" nocase
+  $hi1="Hola sr/sra" nocase 
+  $hi2="Hello sir/madam" nocase
+  $hi3="Atencion" nocase
+  $hi4="Attention" nocase
+  $hi5="Dear user" nocase
+  $hi6="Account holder" nocase
 
   $key1 = "BTC" nocase
   $key2 = "Wallet" nocase
@@ -23,9 +23,9 @@ strings:
   $key4 = "hours" nocase
   $key5 = "payment" nocase
   $key6 = "malware" nocase
-  $key = "bitcoin address" nocase
-  $key7 = "access" nocase
-  $key8 = "virus" nocase
+  $key7 = "bitcoin address" nocase
+  $key8 = "access" nocase
+  $key9 = "virus" nocase
 
   $url_1="Click" nocase
   $url_2="Confirm" nocase
@@ -43,8 +43,8 @@ strings:
  
 condition:
   all of ($eml*) and
-  any of ($saludo*) or 
+  any of ($hi*) or 
   any of ($key*) or 
   any of ($url*) or 
-  any of ($lie*))
+  any of ($lie*)
 }

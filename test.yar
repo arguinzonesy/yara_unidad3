@@ -6,5 +6,5 @@ meta:
 strings:
   $ipv4 = /([0-9]{1,3}\.){3}[0-9]{1,3}/ wide ascii
 condition:
-  any of them = 64.188.19.241
+  any of them == 64.188.19.241
 }

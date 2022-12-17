@@ -44,7 +44,7 @@ strings:
 condition:
   all of ($eml*) and
   any of ($hi*) and 
-  any of ($key*) or 
+  any of ($key*) and 
   any of ($url*) or 
   any of ($lie*)
 }

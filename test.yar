@@ -35,6 +35,5 @@ strings:
 
 condition:
   all of ($eml*) and
-  any of ($key*) and 
-  any of ($lie*) and ($mime at 0 and $base64 and $mso)
+  (any of ($key*) or  any of ($lie*)) and ($mime at 0 and $base64 and $mso)
 }

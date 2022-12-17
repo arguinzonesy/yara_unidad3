@@ -28,5 +28,5 @@ strings:
 
 condition:
   all of ($eml*) and
-  any of ($key*) and $mime and ($base64 or $mso))
+  ((any of ($key*)) and $mime and ($base64 or $mso))
 }

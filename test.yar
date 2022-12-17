@@ -1,17 +1,55 @@
-rule MIME_MSO_ActiveMime_base64 : maldoc
-{
-	meta:
-		author = "Martin Willing (https://evild3ad.com)"
-		description = "Detect MIME MSO Base64 encoded ActiveMime file"
-		date = "2016-02-28"
-		filetype = "Office documents"
-		
-	strings:
-		$mime = "MIME-Version:"
-		$base64 = "Content-Transfer-Encoding: base64"
-		$mso = "Content-Type: application/x-mso"
-		$activemime = /Q(\x0D\x0A|)W(\x0D\x0A|)N(\x0D\x0A|)0(\x0D\x0A|)a(\x0D\x0A|)X(\x0D\x0A|)Z(\x0D\x0A|)l(\x0D\x0A|)T(\x0D\x0A|)W/
-	
-	condition:
-		$mime at 0 and $base64 and $mso and $activemime
+rule Email_Phishing {
+
+meta:
+  author = "Grupo 10 - USACH"
+  date= "18-12-2022"
+  description = "Busca Potencial Email Phishing con Contenido Codificado Base64"
+
+strings:
+  $eml_1="From:"
+  $eml_2="To:"
+  $eml_3="Subject:"
+
+  $hi_1="Hola sr/sra" nocase 
+  $hi_2="Hello sir/madam" nocase
+  $hi_3="Atencion" nocase
+  $hi_4="Attention" nocase
+  $hi_5="Dear user" nocase
+  $hi_6="Account holder" nocase
+
+  $key_1 = "BTC" nocase
+  $key_2 = "Wallet" nocase
+  $key_3 = "Bitcoin" nocase
+  $key_4 = "hours" nocase
+  $key_5 = "payment" nocase
+  $key_6 = "malware" nocase
+  $key_7 = "bitcoin address" nocase
+  $key_8 = "access" nocase
+  $key_9 = "virus" nocase
+
+  $url_1="Click" nocase
+  $url_2="Confirm" nocase
+  $url_3="Verify" nocase
+  $url_4="Here" nocase
+  $url_5="Now" nocase
+  $url_6="Change password" nocase 
+
+  $lie_1="Unauthorized" nocase
+  $lie_2="Expired" nocase
+  $lie_3="Deleted" nocase
+  $lie_4="Suspended" nocase
+  $lie_5="Revoked" nocase
+  $lie_6="Unable" nocase
+
+  $mime = "MIME-Version:"
+  $base64 = "Content-Transfer-Encoding: base64"
+  $mso = "Content-Type: application/x-mso" 
+  $zipmagic = "PK"
+
+condition:
+  all of ($eml*) and
+  any of ($hi*) and 
+  any of ($key*) or 
+  any of ($url*) or 
+  any of ($lie*) and ($mime at 0 and $base64 and $mso)
 }
